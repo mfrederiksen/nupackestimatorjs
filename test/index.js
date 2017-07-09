@@ -1,5 +1,5 @@
-const should   = require('chai').should(),
-      estimate = require('../index').estimate;
+const should = require('chai').should(),
+    estimate = require('../index').estimate;
 
 describe('estimate', () => {
   it('Passes Example 1', () => {
