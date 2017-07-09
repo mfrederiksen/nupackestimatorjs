@@ -1,0 +1,19 @@
+{
+  "name": "nupackestimatorjs",
+  "version": "0.1.0",
+  "description": "Library for calculating NuPack cost estimations",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mfrederiksen/nupackestimatorjs.git"
+  },
+  "author": "Mark Frederiksen <mfrederiksen@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.0.2",
+    "mocha": "^3.4.2"
+  }
+}
