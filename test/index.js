@@ -18,7 +18,7 @@ describe('estimate', () => {
     estimate(0, 1, 'food').should.equal(0);
   });
 
-  it('Should return base price when people is 0 and type is other', () => {
-    estimate(111.11, 0, '???').should.equal(111.11);
+  it('Should return base price with base markup when people is 0 and type is other', () => {
+    estimate(111.11, 0, '???').should.equal(116.67);
   });
 });
