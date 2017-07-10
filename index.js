@@ -1,5 +1,6 @@
-const EstimateCalculator = require('./lib/EstimateCalculator'),
-                  markup = require('./markup.json');
+const   EstimateCalculator = require('./lib/EstimateCalculator'),
+  StringEstimateCalculator = require('./lib/StringEstimateCalculator'),
+                    markup = require('./markup.json');
 
 if (typeof(markup.flat) !== 'number' || typeof(markup.people) !== 'number' || typeof(markup.type ) !== 'object') throw new Error('Invalid config format.  See README.md for details.');
 

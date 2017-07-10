@@ -25,7 +25,7 @@ describe('EstimateCalculator', () => {
       });
 
       it('Should not allow non number flat rates', () => {
-        (() => new EstimateCalculator('', 1, {})).should.throw(TypeError);
+        (() => new EstimateCalculator('asd', 1, {})).should.throw(TypeError);
       });
 
       it('Should not allow null people rates', () => {
@@ -33,7 +33,7 @@ describe('EstimateCalculator', () => {
       });
 
       it('Should not allow non number people rates', () => {
-        (() => new EstimateCalculator(1, '', {})).should.throw(TypeError);
+        (() => new EstimateCalculator(1, 'asd', {})).should.throw(TypeError);
       });
 
       it('Should assume empty rate map if not supplied', () => {
@@ -69,11 +69,15 @@ describe('EstimateCalculator', () => {
       });
 
       it('Should not allow negative base price', () => {
-        (() => es.calculate(-1, 1, 'food')).should.throw(Error);
+        (() => es.calculate(-1, 1, 'food')).should.throw(RangeError);
       });
 
       it('Should not allow negative people', () => {
-        (() => es.calculate(0, -1, 'food')).should.throw(Error);
+        (() => es.calculate(0, -1, 'food')).should.throw(RangeError);
+      });
+
+      it('Should not allow non number material rates', () => {
+        (() => (new EstimateCalculator(1, 1, {'food': 'asd'})).calculate(1, 1, 'food')).should.throw(TypeError);
       });
 
       it('Should round to 2 decimal places', () => {
