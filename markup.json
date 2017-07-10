@@ -1,0 +1,9 @@
+{
+  "flat": 0.05,
+  "people": 0.012,
+  "type": {
+    "drugs" : 0.075,
+    "food": 0.13,
+    "electronics": 0.02
+  }
+}

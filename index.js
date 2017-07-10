@@ -1,19 +1,19 @@
-const flatMarkup = 1.05,
-    peopleMarkup = 0.012;
+const markup = require('./markup.json');
 
-const typeMarkupMap = {
-       'drugs' : 0.075,
-        'food' : 0.13,
-  'electronics': 0.02
-};
+if (typeof(markup.flat) !== 'number' || typeof(markup.people) !== 'number' || typeof(markup.type ) !== 'object') throw new Error('Invalid config format.  See README.md for details.');
 
 function estimate(basePrice, numPeople, type) {
   if (basePrice < 0) throw new Error('basePrice must be greater than 0');
   if (numPeople < 0) throw new Error('numPeople must be greater than 0');
 
-  let baseWithFlat = basePrice * flatMarkup;
-  let typeMarkup = typeMarkupMap[type.toLowerCase()] || 0;
-  let finalEstimate = (baseWithFlat * (1.0 + (numPeople * peopleMarkup))) + (baseWithFlat * typeMarkup);
+  let baseMarkup = basePrice * (1.0 + markup.flat);
+  let peopleMarkup = baseMarkup * (numPeople * markup.people);
+
+  let typeMarkupRate = markup.type[type.toLowerCase()] || 0;
+  if (typeof(typeMarkupRate) !== 'number') throw new Error(`Invalid config format.  Markup rate for '${type.toLowerCase()}' must be a number.`);
+
+  let typeMarkup = baseMarkup * typeMarkupRate;
+  let finalEstimate = baseMarkup + peopleMarkup + typeMarkup;
 
   // Round to 2 decimal points
   return Math.round(finalEstimate * 100) / 100;

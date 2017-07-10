@@ -30,7 +30,25 @@ npm install
 
 ### Configuration
 
+markup.json defines all markups.  Markups can be set in decimal form (eg 5% should be 0.05).  
 
+The'flat' and 'people' keys define the flat rate markup and per-person labour markup, respectively.
+
+The type object allows for addition of new types.  All type names must be lower case.
+
+example:
+```json
+{
+  "flat": 0.05,
+  "people": 0.012,
+  "type": {
+    "drugs" : 0.075,
+    "food": 0.13,
+    "electronics": 0.02,
+    "hats" : 0.99
+  }
+}
+```
 
 ### Testing
 
