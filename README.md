@@ -42,7 +42,7 @@ npm install git+https://git@github.com:mfrederiksen/nupackestimatorjs.git --save
 
 ### Library usage
 
-nupackestimatorjs can be used simple and advanced modes.  In simple mode, a calculator function can be required in and used immediately.  Advanced mode gives direct access to the calculator classes.
+nupackestimatorjs can be used in simple and advanced modes.  In simple mode, a calculator function can be required in and used immediately.  Advanced mode gives direct access to the calculator classes.
 
 Simple usage example:
 ```javascript
