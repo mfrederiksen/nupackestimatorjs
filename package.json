@@ -4,7 +4,7 @@
   "description": "Library for calculating NuPack cost estimations",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "node_modules/.bin/mocha"
   },
   "repository": {
     "type": "git",
@@ -12,8 +12,10 @@
   },
   "author": "Mark Frederiksen <mfrederiksen@gmail.com>",
   "license": "ISC",
+  "dependencies": {
+    "chai": "^4.0.2"
+  },
   "devDependencies": {
-    "chai": "^4.0.2",
     "mocha": "^3.4.2"
   }
 }

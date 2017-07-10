@@ -91,13 +91,14 @@ flat, labour and materials keys are all required.  Rates must be specified as a 
 
 ### Testing
 
-Direct install:
+from direct install:
 ```bash
 npm test
 ```
 
-As a dependency:
+from a dependency:
 ```bash
+npm install -g mocha
 cd node_modules/nupackestimatorjs
-npm test
+mocha
 ```
