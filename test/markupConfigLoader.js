@@ -7,7 +7,7 @@ describe('markupConfigLoader', () => {
   });
 
   it('Should use override config when supplied', () => {
-    let override = {
+    const override = {
       "flat": 1,
       "labour": 2,
       "materials": {

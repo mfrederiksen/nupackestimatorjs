@@ -4,7 +4,7 @@ const         should = require('chai').should(),
 describe('EstimateCalculator', () => {
   describe('calculate', () => {
     describe('Examples', () => {
-      let exampleEstimator = new EstimateCalculator(0.05, 0.012, { "drugs" : 0.075, "food": 0.13, "electronics": 0.02 });
+      const exampleEstimator = new EstimateCalculator(0.05, 0.012, { "drugs" : 0.075, "food": 0.13, "electronics": 0.02 });
 
       it('Should pass example 1', () => {
         exampleEstimator.calculate(1299.99, 3, 'food').should.equal(1591.58);

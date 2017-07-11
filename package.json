@@ -4,7 +4,8 @@
   "description": "Library for calculating NuPack cost estimations",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/.bin/mocha"
+    "test": "node_modules/.bin/mocha",
+    "test-watch": "node_modules/.bin/mocha -w"
   },
   "repository": {
     "type": "git",
