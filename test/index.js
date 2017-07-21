@@ -6,10 +6,6 @@ describe('index', () => {
     index.EstimateCalculator.should.equal(require('../lib/EstimateCalculator'));
   });
 
-  it('Should expose StringEstimateCalculator class', () => {
-    index.StringEstimateCalculator.should.equal(require('../lib/StringEstimateCalculator'));
-  });
-
   describe('estimator', () => {
     it('Should construct an estimator using default config', () => {
       index.estimator().should.be.a('function');
@@ -19,7 +15,7 @@ describe('index', () => {
       index.estimator({ flat: 1, labour: 2, materials: {}}).should.be.a('function');
     });
 
-    let basicEstimator = index.estimator({ flat: 1, labour: 2, materials: { 'food': 3 }});
+    const basicEstimator = index.estimator({ flat: 1, labour: 2, materials: { 'food': 3 }});
 
     it('Should use a work in library mode', () => {
       basicEstimator(1, 1, 'food').should.equal(12.00);
