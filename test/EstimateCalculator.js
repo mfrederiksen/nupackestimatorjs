@@ -79,11 +79,18 @@ describe('EstimateCalculator', () => {
       it('Should not allow non number material rates', () => {
         (() => (new EstimateCalculator(1, 1, {'food': 'asd'})).calculate(1, 1, 'food')).should.throw(TypeError);
       });
-
-      it('Should round to 2 decimal places', () => {
-        (new EstimateCalculator(0.055, 0, {})).calculate(1, 0, '').should.equal(1.06);
-      });
     });
 
+    describe('rounding', () => {
+      it('Should round final estimate using supplied rounding function', () => {
+        function createRoundingFn(expectedValue, returnValue) {
+          return (value) => {
+            value.should.equal(expectedValue);
+            return returnValue;
+          };
+        }
+        (new EstimateCalculator(1, 1, {}, createRoundingFn(4, 10))).calculate(1, 1, '').should.equal(10);
+      });
+    });
   });
 });

@@ -1,5 +1,5 @@
 const should = require('chai').should(),
-       round = require('../lib/round');
+       round = require('../lib/round').round;
 
 describe('round', () => {
   it('Should round to 0 decimal places', () => {
